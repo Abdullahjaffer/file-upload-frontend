@@ -17,7 +17,7 @@ class Home extends React.Component {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const formData = new FormData();
     formData.append("file", this.state.fileList[0]);
-    fetch("/", {
+    fetch(proxyurl + "http://test.mydashboard.gq/", {
       method: "post",
       headers: {
         Accept: "application/json",
