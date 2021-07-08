@@ -56,7 +56,10 @@ class Home extends React.Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          error: JSON.stringify(err, Object.getOwnPropertyNames(err)),
+          error:
+            typeof err == "object"
+              ? JSON.stringify(err, Object.getOwnPropertyNames(err))
+              : err,
         });
       });
   };
